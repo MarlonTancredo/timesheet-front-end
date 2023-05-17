@@ -1,10 +1,14 @@
 import styled from "styled-components";
 import colors from "../components/styles/colors/styles";
 
+const { fullGrey, white } = colors;
+
 export const AppWrapper = styled.div`
   display: flex;
   flex-direction: column;
   align-items: center;
+  justify-content: center;
+  text-align: center;
 `;
 
 export const Content = styled.div`
@@ -12,33 +16,31 @@ export const Content = styled.div`
 `;
 
 //Navbar section
-export const Wrapper = styled.nav`
-  display: flex;
-  flex-direction: row;
-  background-color: ${colors.fullGrey};
-  color: ${colors.white};
+export const NavWrapper = styled.div`
   width: 100%;
-  height: auto;
+  display: flex;
+  background-color: ${fullGrey};
+  color: ${white};
+  height: 5rem;
   align-items: center;
 `;
 
 export const LogoSection = styled.div`
   display: flex;
   flex-direction: row;
-  justify-content: left;
-  margin-left: 1.6rem;
+  width: 20%;
 `;
 
-export const Title = styled.h2``;
+export const Title = styled.div``;
 
 export const PagesSection = styled.div`
   display: flex;
   flex-direction: row;
-  margin-left: auto;
+  width: 80%;
+  justify-content: end;
 `;
 
 export const Links = styled.ul`
   display: flex;
-  flex-direction: row;
   list-style: none;
 `;

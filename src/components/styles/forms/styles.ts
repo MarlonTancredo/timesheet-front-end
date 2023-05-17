@@ -1,12 +1,15 @@
 import styled, { keyframes } from "styled-components";
 
 import colors from "../colors/styles";
+const { grey, fullGrey, white } = colors;
 
 export const Wrapper = styled.div`
   width: 25rem;
   display: flex;
   flex-direction: column;
+  justify-content: center;
   align-items: center;
+  text-align: center;
   margin-bottom: 3rem;
   box-shadow: 0 6px 20px 0 ${colors.grey};
   padding: 1rem;
@@ -19,18 +22,18 @@ export const FormWrapper = styled.form`
 `;
 
 export const Title = styled.label`
-  color: ${colors.fullGrey};
+  color: ${fullGrey};
   font-size: 35px;
   margin-bottom: 0.5rem;
 `;
 
 export const Break = styled.div`
-  border-bottom: ${colors.grey} solid 1px;
+  border-bottom: ${grey} solid 1px;
   margin-bottom: 3rem;
 `;
 
 export const FieldsNames = styled.label`
-  color: ${colors.fullGrey};
+  color: ${fullGrey};
   margin-bottom: 0;
 `;
 
@@ -38,15 +41,15 @@ export const Input = styled.input`
   outline: none;
   height: 3rem;
   margin-bottom: 1rem;
-  border: ${colors.grey} solid 1px;
+  border: ${grey} solid 1px;
   border-radius: 0.25em;
 `;
 
 export const StyledLink = styled.div`
   a {
-    margin-right: 2rem;
+    margin-right: 1rem;
     text-decoration: transparent;
-    color: ${colors.white};
+    color: ${white};
     cursor: pointer;
     transition: 0.3s;
   }
@@ -70,10 +73,13 @@ export const HomeWrapper = styled(Wrapper)`
   animation-duration: 0.3s;
   animation-timing-function: linear;
   animation-iteration-count: 1;
+  @media only screen and (max-width: 450px) {
+    max-width: 18rem;
+  }
 `;
 
 export const HomeStyledLink = styled(StyledLink)`
   a {
-    color: ${colors.fullGrey};
+    color: ${fullGrey};
   }
 `;

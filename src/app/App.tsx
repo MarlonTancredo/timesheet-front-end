@@ -23,7 +23,7 @@ const App = () => {
 
   return !stateIsLogged ? (
     <S.AppWrapper>
-      <S.Wrapper>
+      <S.NavWrapper>
         <S.LogoSection>
           <S.Title>Time Sheet</S.Title>
         </S.LogoSection>
@@ -40,7 +40,7 @@ const App = () => {
             </F.StyledLink>
           </S.Links>
         </S.PagesSection>
-      </S.Wrapper>
+      </S.NavWrapper>
       <S.Content>
         <Routes>
           <Route path="/" element={<HomePage />} />
@@ -55,7 +55,7 @@ const App = () => {
     </S.AppWrapper>
   ) : (
     <S.AppWrapper>
-      <S.Wrapper>
+      <S.NavWrapper>
         <S.LogoSection>
           <S.Title>Time Sheet</S.Title>
         </S.LogoSection>
@@ -71,7 +71,7 @@ const App = () => {
             </F.StyledLink>
           </S.Links>
         </S.PagesSection>
-      </S.Wrapper>
+      </S.NavWrapper>
       <S.Content>
         <Routes>
           <Route path="/" element={<Aplication />} />
