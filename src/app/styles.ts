@@ -31,7 +31,11 @@ export const LogoSection = styled.div`
   width: 20%;
 `;
 
-export const Title = styled.div``;
+export const Title = styled.div`
+  margin-left: 1rem;
+  font-size: 20px;
+  font-weight: bold;
+`;
 
 export const PagesSection = styled.div`
   display: flex;
