@@ -11,7 +11,7 @@ export const Content = styled.div`
   margin-top: 3rem;
 `;
 
-//Navbar
+//Navbar section
 export const Wrapper = styled.nav`
   display: flex;
   flex-direction: row;
