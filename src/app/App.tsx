@@ -44,7 +44,6 @@ const App = () => {
       <S.Content>
         <Routes>
           <Route path="/" element={<HomePage />} />
-          <Route index element={<HomePage />} />
           <Route
             path="/sign-in"
             element={<SignIn sendToApp={handleSendToApp} />}
