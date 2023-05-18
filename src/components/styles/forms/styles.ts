@@ -1,7 +1,7 @@
 import styled, { keyframes } from "styled-components";
 
 import colors from "../colors/styles";
-const { grey, fullGrey, white } = colors;
+const { grey, fullGrey } = colors;
 
 export const Wrapper = styled.div`
   width: 25rem;
