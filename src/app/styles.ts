@@ -11,9 +11,7 @@ export const AppWrapper = styled.div`
   text-align: center;
 `;
 
-export const Content = styled.div`
-  margin-top: 3rem;
-`;
+export const Content = styled.div``;
 
 //Navbar section
 export const NavWrapper = styled.div`
@@ -22,6 +20,8 @@ export const NavWrapper = styled.div`
   color: ${fullGrey};
   height: 5rem;
   align-items: center;
+  margin-top: 1rem;
+  margin-bottom: 1rem;
 `;
 
 export const LogoSection = styled.div`
