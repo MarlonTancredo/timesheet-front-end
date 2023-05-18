@@ -1,11 +1,13 @@
 import Swal from "sweetalert2";
+import colors from "../colors/styles";
+const { blue } = colors;
 
 export const succesAlert = (message: string) => {
   Swal.fire({
     title: message,
     icon: "success",
     confirmButtonText: "OK",
-    confirmButtonColor: "confirm",
+    confirmButtonColor: blue,
   });
 };
 
@@ -14,7 +16,7 @@ export const warningAlert = (message: string) => {
     title: message,
     icon: "warning",
     confirmButtonText: "OK",
-    confirmButtonColor: "confirm",
+    confirmButtonColor: blue,
   });
 };
 
@@ -23,6 +25,6 @@ export const errorAlert = (message: string) => {
     title: message,
     icon: "error",
     confirmButtonText: "OK",
-    confirmButtonColor: "confirm",
+    confirmButtonColor: blue,
   });
 };

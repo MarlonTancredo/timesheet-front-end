@@ -13,7 +13,6 @@ export const CalendarWrapp = styled.div`
   box-shadow: 0 6px 20px 0 ${grey};
   margin-left: 1rem;
   margin-right: 1rem;
-  margin-top: 2rem;
   .MuiStack-root {
     margin-top: 1rem;
     margin-left: auto;

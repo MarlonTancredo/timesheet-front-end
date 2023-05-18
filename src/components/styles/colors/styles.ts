@@ -9,8 +9,8 @@ type Colors = {
 const colors: Colors = {
   grey: "#ccc",
   fullGrey: "#444",
-  blue: "#7066e0",
-  hoverBlue: "#6055d5",
+  blue: "#1976d2",
+  hoverBlue: "#0962ba",
   white: "#fff",
 };
 
