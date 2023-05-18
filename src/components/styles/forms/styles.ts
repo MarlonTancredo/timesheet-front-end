@@ -53,7 +53,7 @@ export const StyledLink = styled.div`
   a {
     margin-right: 1rem;
     text-decoration: transparent;
-    color: ${white};
+    color: ${fullGrey};
     cursor: pointer;
     transition: 0.3s;
   }

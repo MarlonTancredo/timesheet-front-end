@@ -1,7 +1,7 @@
 import styled from "styled-components";
 import colors from "../components/styles/colors/styles";
 
-const { fullGrey, white } = colors;
+const { fullGrey } = colors;
 
 export const AppWrapper = styled.div`
   display: flex;
@@ -19,8 +19,7 @@ export const Content = styled.div`
 export const NavWrapper = styled.div`
   width: 100%;
   display: flex;
-  background-color: ${fullGrey};
-  color: ${white};
+  color: ${fullGrey};
   height: 5rem;
   align-items: center;
 `;
