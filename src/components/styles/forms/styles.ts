@@ -12,6 +12,7 @@ export const Wrapper = styled.div`
   text-align: center;
   margin-bottom: 3rem;
   box-shadow: 0 6px 20px 0 ${grey};
+  border-radius: 0.5rem;
   padding: 1rem;
   @media only screen and (max-width: 450px) {
     width: 19.5rem;
