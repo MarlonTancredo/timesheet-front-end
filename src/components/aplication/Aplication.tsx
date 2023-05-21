@@ -1,34 +1,26 @@
 import * as S from "./styles";
-
-import { LocalizationProvider } from "@mui/x-date-pickers/LocalizationProvider";
-import { DemoItem } from "@mui/x-date-pickers/internals/demo";
-
-import { AdapterDayjs } from "@mui/x-date-pickers/AdapterDayjs";
-import { DateCalendar } from "@mui/x-date-pickers/DateCalendar";
 import { useState } from "react";
-import dayjs, { Dayjs } from "dayjs";
+
+import { Calendar } from "@fall-out/react-calendar";
+import "@fall-out/react-calendar/dist/Calendar.css";
+
+type ValuePiece = Date | null;
+
+type Value = ValuePiece | [ValuePiece, ValuePiece];
 
 const Application = () => {
-  const [fromValue, fromSetValue] = useState<Dayjs | null>(dayjs(new Date()));
-  const [toValue, toSetValue] = useState<Dayjs | null>(dayjs(new Date()));
+  const [value, setValue] = useState<Value>(new Date());
+  console.log(value);
 
   return (
-    <LocalizationProvider dateAdapter={AdapterDayjs}>
-      <S.CalendarWrapp>
-        <DemoItem label="From">
-          <DateCalendar
-            value={fromValue}
-            onChange={(newValue) => fromSetValue(newValue)}
-          />
-        </DemoItem>
-        <DemoItem label="to">
-          <DateCalendar
-            value={toValue}
-            onChange={(newValue) => toSetValue(newValue)}
-          />
-        </DemoItem>
-      </S.CalendarWrapp>
-    </LocalizationProvider>
+    <S.CalendarWrapp>
+      <Calendar
+        selectRange
+        minDate={new Date()}
+        onChange={setValue}
+        value={value}
+      ></Calendar>
+    </S.CalendarWrapp>
   );
 };
 
