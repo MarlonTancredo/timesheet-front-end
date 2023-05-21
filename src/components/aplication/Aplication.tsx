@@ -1,7 +1,7 @@
 import * as S from "./styles";
 import { useState } from "react";
 
-import { Calendar } from "@fall-out/react-calendar";
+import { Calendar } from "react-calendar";
 import "@fall-out/react-calendar/dist/Calendar.css";
 
 type ValuePiece = Date | null;
