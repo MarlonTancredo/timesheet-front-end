@@ -16,15 +16,7 @@ const months = [
   "December",
 ];
 
-const weekDays = [
-  "Monday",
-  "Tuesday",
-  "Wednesday",
-  "Thursday",
-  "Friday",
-  "Saturday",
-  "Sunday",
-];
+const weekDays = ["Mon", "Tue", "Wed", "Thu", "Fri", "Sat", "Sun"];
 
 let sundays: number[] = [];
 let mondays: number[] = [];
@@ -46,9 +38,8 @@ const Calendar = () => {
     setYear(year - 1);
   };
 
-  const handleOnChange = (month: string) => {
-    const myMonth = parseInt(month);
-    setMonth(myMonth);
+  const handleOnChange = (value: string) => {
+    setMonth(parseInt(value));
   };
 
   const verifyMonth = (month: string) => {
@@ -137,8 +128,11 @@ const Calendar = () => {
       {/* Months */}
       <div style={{ display: "flex" }}>
         <select
-          style={{ width: "7rem" }}
-          onChange={(e) => handleOnChange(e.target.value)}
+          style={{ width: "7rem", textAlign: "center" }}
+          onChange={(e) => {
+            const value = e.target.value;
+            handleOnChange(value);
+          }}
           value={month}
         >
           {months.map((myMonth: string, index: number) => {
@@ -153,17 +147,23 @@ const Calendar = () => {
       {/* Calendar */}
       <div
         style={{
-          marginTop: "0.5rem",
+          marginTop: "1rem",
         }}
       >
         <div
           style={{
             display: "grid",
             gridTemplateColumns: "repeat(7, 1fr)",
+            gap: "1rem",
+            padding: "1rem",
           }}
         >
           {weekDays.map((weekDay: string, index: number) => {
-            return <div key={index}>{weekDay}</div>;
+            return (
+              <div style={{ fontWeight: "bold" }} key={index}>
+                {weekDay}
+              </div>
+            );
           })}
           {/* Monday */}
           <div>
