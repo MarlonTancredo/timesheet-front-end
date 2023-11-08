@@ -34,6 +34,10 @@ type Users = {
     isLogged: boolean;
 };
 
+type SignInProps = {
+    sendToApp: (isLogged: boolean) => void;
+};
+
 const reducer = (state: State, action: Action): State => {
     const { type, value } = action;
     switch (type) {
@@ -55,7 +59,7 @@ const initialState: InitialState = {
 
 const usersUrl = "http://localhost:3001/users";
 
-const SignIn = ({ sendToApp }: any) => {
+const SignIn = ({ sendToApp }: SignInProps) => {
     const [state, dispatch] = useReducer(reducer, initialState);
     const { email, password } = state;
 
@@ -82,7 +86,7 @@ const SignIn = ({ sendToApp }: any) => {
         dispatch(action);
     };
 
-    const handleOnChange = (e: { target: { name: any; value: any } }) => {
+    const handleOnChange = (e: { target: { name: string; value: string } }) => {
         const action = { type: e.target.name, value: e.target.value };
         dispatch(action);
     };

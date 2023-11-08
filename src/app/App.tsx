@@ -11,7 +11,7 @@ import { Routes, Route, NavLink } from "react-router-dom";
 import { useState } from "react";
 
 const App = () => {
-    const [stateIsLogged, setStateStateIsLogged] = useState(false);
+    const [stateIsLogged, setStateStateIsLogged] = useState(true);
 
     const handleSendToApp = (isLogged: boolean) => {
         setStateStateIsLogged(isLogged);
