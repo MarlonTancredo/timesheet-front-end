@@ -2,7 +2,7 @@ import styled from "styled-components";
 
 import colors from "../colors/styles";
 
-export const FormButtomWrapper = styled.div``;
+export const FormButtonWrapper = styled.div``;
 
 export const FormButton = styled.button`
     font-size: 1em;

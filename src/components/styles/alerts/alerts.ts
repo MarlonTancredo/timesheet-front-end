@@ -2,7 +2,7 @@ import Swal from "sweetalert2";
 import colors from "../colors/styles";
 const { blue } = colors;
 
-export const succesAlert = (message: string) => {
+export const successAlert = (message: string) => {
     Swal.fire({
         title: message,
         icon: "success",

@@ -1,7 +1,7 @@
 import * as F from "../styles/forms/styles";
 import FormButton from "../form-button/FormButton";
 
-import { succesAlert, warningAlert, errorAlert } from "../styles/alerts/alerts";
+import { successAlert, warningAlert, errorAlert } from "../styles/alerts/alerts";
 
 import { useReducer, useEffect, useState } from "react";
 
@@ -106,7 +106,7 @@ const SignUp = () => {
     const saveUser = () => {
         try {
             Axios.post(usersUrl, state);
-            succesAlert("Sign up success!");
+            successAlert("Sign up success!");
         } catch (err) {
             errorAlert("No database response!");
             console.log(err);

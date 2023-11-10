@@ -7,7 +7,7 @@ export const ButtonSection = styled.div`
 `;
 
 export const SignInSection = styled.div`
-    width: 70%;
+    width: 100%;
     margin-right: 0.5rem;
 `;
 

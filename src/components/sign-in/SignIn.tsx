@@ -1,14 +1,9 @@
 import * as F from "../styles/forms/styles";
 import * as S from "./styles";
-
-import { succesAlert, warningAlert, errorAlert } from "../styles/alerts/alerts";
-
+import { successAlert, warningAlert } from "../styles/alerts/alerts";
 import FormButton from "../form-button/FormButton";
-
-import Axios from "axios";
-
-import { useReducer, useEffect, useState } from "react";
-import { Link } from "react-router-dom";
+import { useReducer, useContext } from "react";
+import { isLoggedContext } from "../../app/App";
 
 type InitialState = {
     email: string;
@@ -23,19 +18,6 @@ type State = {
 type Action = {
     type?: string;
     value?: string;
-};
-
-type Users = {
-    _id: string;
-    name?: string;
-    surname?: string;
-    email?: string;
-    password?: string;
-    isLogged: boolean;
-};
-
-type SignInProps = {
-    sendToApp: (isLogged: boolean) => void;
 };
 
 const reducer = (state: State, action: Action): State => {
@@ -57,29 +39,10 @@ const initialState: InitialState = {
     password: "",
 };
 
-const usersUrl = "http://localhost:3001/users";
-
-const SignIn = ({ sendToApp }: SignInProps) => {
+const SignIn = () => {
     const [state, dispatch] = useReducer(reducer, initialState);
     const { email, password } = state;
-
-    const [users, setUsers] = useState<Users[]>([]);
-
-    const getUsers = async () => {
-        try {
-            const users = await Axios.get(usersUrl);
-            const data = await users.data;
-            setUsers(data);
-            // console.log(data);
-        } catch (error) {
-            console.log(error);
-            errorAlert("No database response!");
-        }
-    };
-
-    useEffect(() => {
-        getUsers();
-    }, []);
+    const { setStateIsLogged } = useContext(isLoggedContext);
 
     const clearAllField = () => {
         const action = { type: "clear-all-fields" };
@@ -102,16 +65,13 @@ const SignIn = ({ sendToApp }: SignInProps) => {
             return;
         }
 
-        for (let i = 0; i < users.length; i++) {
-            if (email === users[i].email && password === users[i].password) {
-                sendToApp(true);
-                succesAlert("Login success!");
-                clearAllField();
-                break;
-            } else {
-                warningAlert("Wrong login!");
-                clearAllField();
-            }
+        if (email === "marlon_tancredo@hotmail.com" && password === "123456789") {
+            successAlert("Login success!");
+            setStateIsLogged(true);
+            clearAllField();
+        } else {
+            warningAlert("Wrong login!");
+            clearAllField();
         }
     };
 
@@ -142,18 +102,9 @@ const SignIn = ({ sendToApp }: SignInProps) => {
                     autoComplete="current-password"
                     onChange={handleOnChange}
                 />
-                <S.ButtonSection>
-                    <S.SignInSection>
-                        <Link to="/">
-                            <FormButton name="Sign in" formButtonClick={handleSignButton} />
-                        </Link>
-                    </S.SignInSection>
-                    <S.SignUpSection>
-                        <Link to="/sign-up">
-                            <FormButton name="Sign up" />
-                        </Link>
-                    </S.SignUpSection>
-                </S.ButtonSection>
+                <S.SignInSection>
+                    <FormButton name="Sign in" formButtonClick={handleSignButton} />
+                </S.SignInSection>
             </F.FormWrapper>
         </F.Wrapper>
     );

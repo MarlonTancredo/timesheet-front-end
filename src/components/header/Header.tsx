@@ -1,12 +1,12 @@
+import { useContext } from "react";
 import NavBarSignIn from "./NavBarSignIn";
 import NavBarSignOut from "./NavBarSignOut";
+import { isLoggedContext } from "../../app/App";
 
-type Props = {
-    isLogged: boolean;
-};
+const Header = () => {
+    const { stateIsLogged } = useContext(isLoggedContext);
 
-const Header = ({ isLogged }: Props) => {
-    if (!isLogged) {
+    if (!stateIsLogged) {
         return <NavBarSignIn />;
     }
     return <NavBarSignOut />;

@@ -1,8 +1,12 @@
 import { NavLink } from "react-router-dom";
 import * as S from "../../app/styles";
 import * as F from "../styles/forms/styles";
+import { useContext } from "react";
+import { isLoggedContext } from "../../app/App";
 
 const NavBarSignOut = () => {
+    const { setStateIsLogged } = useContext(isLoggedContext);
+
     return (
         <S.NavWrapper>
             <S.LogoSection>
@@ -13,7 +17,9 @@ const NavBarSignOut = () => {
                     <F.StyledLink>
                         <NavLink to="/">Home</NavLink>
                         <NavLink to="/calendar">Calendar</NavLink>
-                        <NavLink to="/">Sign out</NavLink>
+                        <NavLink to="/" onClick={() => setStateIsLogged(false)}>
+                            Sign out
+                        </NavLink>
                     </F.StyledLink>
                 </S.Links>
             </S.PagesSection>

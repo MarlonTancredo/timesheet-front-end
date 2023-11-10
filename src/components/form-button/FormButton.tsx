@@ -7,9 +7,9 @@ type ButtonProps = {
 
 const FormButton = ({ name, formButtonClick }: ButtonProps) => {
     return (
-        <F.FormButtomWrapper>
+        <F.FormButtonWrapper>
             <F.FormButton onClick={formButtonClick}>{name}</F.FormButton>
-        </F.FormButtomWrapper>
+        </F.FormButtonWrapper>
     );
 };
 
