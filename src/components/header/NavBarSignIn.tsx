@@ -13,7 +13,7 @@ const NavBarSignIn = () => {
                     <F.StyledLink>
                         <NavLink to="/">Home</NavLink>
                         <NavLink to="/sign-in">Sign in</NavLink>
-                        <NavLink to="/sign-up">Sign up</NavLink>
+                        {/* <NavLink to="/sign-up">Sign up</NavLink> */}
                     </F.StyledLink>
                 </S.Links>
             </S.PagesSection>
