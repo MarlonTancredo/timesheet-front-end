@@ -25,10 +25,11 @@ export const FormWrapper = styled.form`
     flex-direction: column;
 `;
 
-export const Title = styled.label`
+export const Title = styled.p`
     color: ${fullGrey};
     font-size: 35px;
     margin-bottom: 0.5rem;
+    margin-top: 0;
 `;
 
 export const Break = styled.div`
@@ -51,7 +52,7 @@ export const Input = styled.input`
 
 export const StyledLink = styled.div`
     a {
-        margin-right: 1rem;
+        padding: 1rem;
         text-decoration: transparent;
         color: ${fullGrey};
         cursor: pointer;
@@ -73,6 +74,7 @@ const leftSlide = keyframes`
  `;
 
 export const HomeWrapper = styled(Wrapper)`
+    width: fit-content;
     animation-name: ${leftSlide};
     animation-duration: 0.3s;
     animation-timing-function: linear;
@@ -85,5 +87,6 @@ export const HomeWrapper = styled(Wrapper)`
 export const HomeStyledLink = styled(StyledLink)`
     a {
         color: ${fullGrey};
+        padding: 1rem;
     }
 `;

@@ -4,7 +4,7 @@ import colors from "../colors/styles";
 
 export const FormButtonWrapper = styled.div``;
 
-export const FormButton = styled.button`
+export const FormButton = styled.input`
     font-size: 1em;
     color: ${colors.white};
     margin-top: 1.5rem;
