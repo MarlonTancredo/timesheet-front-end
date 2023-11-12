@@ -20,7 +20,6 @@ export const NavWrapper = styled.div`
     color: ${fullGrey};
     height: 5rem;
     align-items: center;
-    margin-top: 1rem;
     margin-bottom: 1rem;
 `;
 
