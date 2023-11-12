@@ -2,8 +2,9 @@ import * as F from "../styles/forms/styles";
 import * as S from "./styles";
 import { successAlert, warningAlert } from "../styles/alerts/alerts";
 import FormButton from "../form-button/FormButton";
-import { useReducer, useContext } from "react";
+import { useReducer, useContext, FormEvent } from "react";
 import { isLoggedContext } from "../../app/App";
+import { useNavigate } from "react-router-dom";
 
 type InitialState = {
     email: string;
@@ -43,6 +44,7 @@ const SignIn = () => {
     const [state, dispatch] = useReducer(reducer, initialState);
     const { email, password } = state;
     const { setStateIsLogged } = useContext(isLoggedContext);
+    const navigate = useNavigate();
 
     const clearAllField = () => {
         const action = { type: "clear-all-fields" };
@@ -54,7 +56,9 @@ const SignIn = () => {
         dispatch(action);
     };
 
-    const handleSignButton = () => {
+    const handleSignButton = (e: FormEvent<HTMLFormElement>) => {
+        e.preventDefault();
+
         if (email === "") {
             warningAlert("You must to enter your e-mail!");
             return;
@@ -69,6 +73,7 @@ const SignIn = () => {
             successAlert("Login success!");
             setStateIsLogged(true);
             clearAllField();
+            navigate("/calendar");
         } else {
             warningAlert("Wrong login!");
             clearAllField();
@@ -77,33 +82,31 @@ const SignIn = () => {
 
     return (
         <F.Wrapper>
-            <F.FormWrapper
-                onSubmit={(e) => {
-                    e.preventDefault();
-                }}
-            >
-                <F.Title>Sign in</F.Title>
+            <F.Title>Sign in</F.Title>
+            <F.FormWrapper onSubmit={(e) => handleSignButton(e)}>
                 <F.Break />
-                <F.FieldsNames>E-mail</F.FieldsNames>
+                <F.FieldsNames htmlFor="email">E-mail</F.FieldsNames>
                 <F.Input
-                    value={email}
+                    id="email"
                     name="email"
                     type="text"
+                    value={email}
                     maxLength={30}
                     autoComplete="email"
                     onChange={handleOnChange}
                 />
-                <F.FieldsNames>Password</F.FieldsNames>
+                <F.FieldsNames htmlFor="password">Password</F.FieldsNames>
                 <F.Input
-                    value={password}
+                    id="password"
                     name="password"
                     type="password"
+                    value={password}
                     maxLength={30}
                     autoComplete="current-password"
                     onChange={handleOnChange}
                 />
                 <S.SignInSection>
-                    <FormButton name="Sign in" formButtonClick={handleSignButton} />
+                    <FormButton name="Sign in"></FormButton>
                 </S.SignInSection>
             </F.FormWrapper>
         </F.Wrapper>
