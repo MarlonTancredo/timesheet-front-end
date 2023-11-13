@@ -56,6 +56,10 @@ const SignIn = () => {
         dispatch(action);
     };
 
+    const saveUserInLocalStorage = () => {
+        sessionStorage.setItem("isLogged", "true");
+    };
+
     const handleSignButton = (e: FormEvent<HTMLFormElement>) => {
         e.preventDefault();
 
@@ -70,6 +74,7 @@ const SignIn = () => {
         }
 
         if (email === "marlon_tancredo@hotmail.com" && password === "123456789") {
+            saveUserInLocalStorage();
             successAlert("Login success!");
             setStateIsLogged(true);
             clearAllField();

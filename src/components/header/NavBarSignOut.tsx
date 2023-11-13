@@ -7,6 +7,11 @@ import { isLoggedContext } from "../../app/App";
 const NavBarSignOut = () => {
     const { setStateIsLogged } = useContext(isLoggedContext);
 
+    const setUserInSessionStorageFalse = () => {
+        setStateIsLogged(false);
+        sessionStorage.setItem("isLogged", "false");
+    };
+
     return (
         <S.NavWrapper>
             <S.LogoSection>
@@ -17,7 +22,7 @@ const NavBarSignOut = () => {
                     <F.StyledLink>
                         <NavLink to="/">Home</NavLink>
                         <NavLink to="/calendar">Calendar</NavLink>
-                        <NavLink to="/" onClick={() => setStateIsLogged(false)}>
+                        <NavLink to="/" onClick={setUserInSessionStorageFalse}>
                             Sign out
                         </NavLink>
                     </F.StyledLink>

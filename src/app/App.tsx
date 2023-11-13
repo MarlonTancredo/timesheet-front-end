@@ -4,7 +4,7 @@ import Header from "../components/header/Header";
 import Router from "../components/router/Router";
 
 import { BrowserRouter } from "react-router-dom";
-import { useState, createContext, Dispatch, SetStateAction } from "react";
+import { useState, createContext, Dispatch, SetStateAction, useEffect } from "react";
 
 type IsLoggedContext = {
     stateIsLogged: boolean;
@@ -14,6 +14,13 @@ export const isLoggedContext = createContext<IsLoggedContext>({ stateIsLogged: f
 
 const App = () => {
     const [stateIsLogged, setStateIsLogged] = useState(false);
+
+    useEffect(() => {
+        const data = sessionStorage.getItem("isLogged");
+        if (data !== null) {
+            setStateIsLogged(JSON.parse(data));
+        }
+    }, []);
 
     return (
         <BrowserRouter>
