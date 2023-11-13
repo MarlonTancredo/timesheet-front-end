@@ -1,15 +1,15 @@
 import { useContext } from "react";
-import SignedRouter from "./SignedRouter";
-import SignedOutRouter from "./SignedOutRouter";
+import PrivateRoute from "./PrivateRoute";
+import PublicRoute from "./PublicRoute";
 import { isLoggedContext } from "../../app/App";
 
 const Router = () => {
     const { stateIsLogged } = useContext(isLoggedContext);
 
     if (!stateIsLogged) {
-        return <SignedOutRouter />;
+        return <PublicRoute />;
     }
-    return <SignedRouter />;
+    return <PrivateRoute />;
 };
 
 export default Router;
