@@ -52,7 +52,7 @@ export const Input = styled.input`
 
 export const StyledLink = styled.div`
     a {
-        padding: 1rem;
+        padding: 0.5rem;
         text-decoration: transparent;
         color: ${fullGrey};
         cursor: pointer;
