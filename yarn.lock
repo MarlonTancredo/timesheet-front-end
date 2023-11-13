@@ -1268,15 +1268,27 @@
   dependencies:
     preact "~10.12.1"
 
-"@fullcalendar/daygrid@^6.1.9":
+"@fullcalendar/daygrid@^6.1.9", "@fullcalendar/daygrid@~6.1.9":
   version "6.1.9"
   resolved "https://registry.yarnpkg.com/@fullcalendar/daygrid/-/daygrid-6.1.9.tgz#efb8aabb2f928ac0b05a77c5443accb546ae5818"
   integrity sha512-o/6joH/7lmVHXAkbaa/tUbzWYnGp/LgfdiFyYPkqQbjKEeivNZWF1WhHqFbhx0zbFONSHtrvkjY2bjr+Ef2quQ==
+
+"@fullcalendar/interaction@^6.1.9":
+  version "6.1.9"
+  resolved "https://registry.yarnpkg.com/@fullcalendar/interaction/-/interaction-6.1.9.tgz#9023922df24c296cb7f4671887f1731f5d5a5db2"
+  integrity sha512-I3FGnv0kKZpIwujg3HllbKrciNjTqeTYy3oJG226oAn7lV6wnrrDYMmuGmA0jPJAGN46HKrQqKN7ItxQRDec4Q==
 
 "@fullcalendar/react@^6.1.9":
   version "6.1.9"
   resolved "https://registry.yarnpkg.com/@fullcalendar/react/-/react-6.1.9.tgz#280fd543901d792c19b50f363c55cc3068917299"
   integrity sha512-ioxu0V++pYz2u/N1LL1V8DkMyiKGRun0gMAll2tQz3Kzi3r9pTwncGKRb1zO8h0e+TrInU08ywk/l5lBwp7eog==
+
+"@fullcalendar/timegrid@^6.1.9":
+  version "6.1.9"
+  resolved "https://registry.yarnpkg.com/@fullcalendar/timegrid/-/timegrid-6.1.9.tgz#83b61ac734638d11182aeb579b638fa0bc52ea32"
+  integrity sha512-le7UV05wVE1Trdr054kgJXTwa+A1pEI8nlCBnPWdcyrL+dTLoPvQ4AWEVCnV7So+4zRYaCqnqGXfCJsj0RQa0g==
+  dependencies:
+    "@fullcalendar/daygrid" "~6.1.9"
 
 "@humanwhocodes/config-array@^0.11.13":
   version "0.11.13"
@@ -4649,6 +4661,11 @@ etag@~1.8.1:
   version "1.8.1"
   resolved "https://registry.yarnpkg.com/etag/-/etag-1.8.1.tgz#41ae2eeb65efa62268aebfea83ac7d79299b0887"
   integrity sha512-aIL5Fx7mawVa300al2BnEE4iNvo1qETxLrPI/o05L7z6go7fCw1J6EQmbK4FmJ2AS7kgVF/KEZWufBfdClMcPg==
+
+event-utils@^2.1.0:
+  version "2.1.0"
+  resolved "https://registry.yarnpkg.com/event-utils/-/event-utils-2.1.0.tgz#c2bef2b6a4a4fa2d178362d6def40e825d39fe75"
+  integrity sha512-X2WRKlWN5VLSyYuJTn2Tblr/goVPg5DoEpgo0PSR3uKHhDhkCE9P6I4VTl4ppgK74Uo1yvOv1qhcazbLv4kUkw==
 
 eventemitter3@^4.0.0:
   version "4.0.7"
